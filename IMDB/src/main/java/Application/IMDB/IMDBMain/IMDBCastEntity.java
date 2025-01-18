@@ -54,8 +54,6 @@ public class IMDBCastEntity {
         this.supportingActress = supportingActress;
     }
 
-    // Optional: Override toString() for easier printing
-    @Override
     public String toString() {
         return "Cast{" +
                 "actor='" + actor + '\'' +
