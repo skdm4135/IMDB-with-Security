@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import Application.IMDB.Framework.MWResponse;
 import Application.IMDB.Framework.MWWrapperService;
 
 @RestController
@@ -17,7 +18,8 @@ public class Controller {
 	private MWWrapperService mwWrapperService;
 	
 	@PostMapping
-	public void getAll(@RequestBody IMDBEntity request) {
-		mwWrapperService.doControl(request);
+	public String getAll(@RequestBody IMDBEntity request) {
+		MWResponse mwResponse =  mwWrapperService.doControl(request);
+		return mwResponse.getResponse();
 	}
 }
