@@ -2,9 +2,11 @@ package Application.IMDB.Framework;
 
 import java.util.Map;
 
+import org.hibernate.annotations.Comment;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-@Configuration
+@Component
 public class MWRequest {
 	
 	private String url;
