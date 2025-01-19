@@ -17,7 +17,7 @@ public class Controller {
 	private MWWrapperService mwWrapperService;
 	
 	@PostMapping
-	public void getAll(@RequestBody IMDBEntity request) {
+	public void getAll(@RequestBody Object request) {
 		mwWrapperService.doControl(request);
 	}
 }
