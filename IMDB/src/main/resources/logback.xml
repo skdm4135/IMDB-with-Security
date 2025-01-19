@@ -1,0 +1,32 @@
+<configuration>
+
+	<appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>
+				%d{yyyy-MM-dd HH:mm:ss:SSS} || %replace(%X{txnId}){^\s*$,HELLO Master SUMIT} || %-5level || %logger{35} -%kvp- %msg %n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="File" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>IMDB.log</file>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>IMDB-%d{yyyy-MM-dd_HH}.%i.log</fileNamePattern>
+			<maxFileSize>100MB</maxFileSize>
+			<maxHistory>10</maxHistory>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>
+				%d{yyyy-MM-dd HH:mm:ss:SSS} || %replace(%X{txnId}){^\s*$,HELLO Master SUMIT} || %-5level || %logger{35} -%kvp- %msg %n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<root level="DEBUG">
+		<appender-ref ref="Console" />
+		<appender-ref ref="File" />
+	</root>
+
+</configuration>
