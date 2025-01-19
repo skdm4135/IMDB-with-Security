@@ -5,18 +5,22 @@ import java.util.Map;
 
 import Application.IMDB.Framework.CtxLogger;
 import Application.IMDB.Framework.MWRequest;
+import Application.IMDB.Framework.MWResponse;
 import Application.IMDB.Framework.MWWrapperService;
 
 @org.springframework.stereotype.Service
-public class Service extends MWWrapperService{
+public class Service extends MWWrapperService {
 
 	@Override
 	public MWRequest prepare_EAI_Request(Object Request) {
+<<<<<<< HEAD
 		CtxLogger.info("--------- INTO EAI Request -----------------");
+=======
+>>>>>>> hotfix
 		MWRequest mwRequest = new MWRequest();
-		
+
 		mwRequest.setRequest(Request);
-		mwRequest.setUrl("http://localhost:8080/imdb");
+		mwRequest.setServiceID("service");
 		Map<String, String> header = new HashMap<>();
 		header.put("Content-Type", "application/json");
 		mwRequest.setHeaders(header);
@@ -25,10 +29,11 @@ public class Service extends MWWrapperService{
 	}
 
 	@Override
-	public void prepare_EAI_Response(String responseStr) {
+	public MWResponse prepare_EAI_Response(String responseStr) {
+		MWResponse mwResponse = new MWResponse();
 		System.out.println(responseStr);
-		
+		mwResponse.setResponse(responseStr);
+		return mwResponse;
 	}
-	
 
 }
