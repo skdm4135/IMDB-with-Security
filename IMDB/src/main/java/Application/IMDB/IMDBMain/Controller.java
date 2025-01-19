@@ -18,8 +18,13 @@ public class Controller {
 	private MWWrapperService mwWrapperService;
 	
 	@PostMapping
+<<<<<<< HEAD
 	public String getAll(@RequestBody IMDBEntity request) {
 		MWResponse mwResponse =  mwWrapperService.doControl(request);
 		return mwResponse.getResponse();
+=======
+	public void getAll(@RequestBody Object request) {
+		mwWrapperService.doControl(request);
+>>>>>>> 15c4d52fc464ed5e3fe332be7d0b9a86f75da210
 	}
 }
