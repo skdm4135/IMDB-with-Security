@@ -11,7 +11,6 @@ import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 
 @Converter
-@Component
 public class CastConverter implements AttributeConverter<List<IMDBCastEntity>, String> {
 
 	@Override
