@@ -3,6 +3,7 @@ package Application.IMDB.IMDBMain;
 import java.util.HashMap;
 import java.util.Map;
 
+import Application.IMDB.Framework.CtxLogger;
 import Application.IMDB.Framework.MWRequest;
 import Application.IMDB.Framework.MWWrapperService;
 
@@ -11,7 +12,7 @@ public class Service extends MWWrapperService{
 
 	@Override
 	public MWRequest prepare_EAI_Request(Object Request) {
-		
+		CtxLogger.info("--------- INTO EAI Request -----------------");
 		MWRequest mwRequest = new MWRequest();
 		
 		mwRequest.setRequest(Request);
