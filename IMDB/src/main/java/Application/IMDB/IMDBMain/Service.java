@@ -13,7 +13,10 @@ public class Service extends MWWrapperService {
 
 	@Override
 	public MWRequest prepare_EAI_Request(Object Request) {
+<<<<<<< HEAD
 		CtxLogger.info("--------- INTO EAI Request -----------------");
+=======
+>>>>>>> hotfix
 		MWRequest mwRequest = new MWRequest();
 
 		mwRequest.setRequest(Request);
